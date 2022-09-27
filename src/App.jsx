@@ -1,9 +1,9 @@
 // import './App.css';
-import Home from './components/Home';
-import Projects from './components/Projects';
+import Home from './Pages/Home';
+import Projects from './Pages/Projects';
 // import Experience from './pages/Experience';
 // import Navbar from './components/Navbar';
-// import Footer from './components/Footer';
+import Footer from './styles/Footer.js';
 import {
   BrowserRouter as Router,
   Route,
@@ -21,7 +21,7 @@ function App() {
           {/* <Route path="/experience" element={<Experience />} /> */}
         </Routes>
       </Router>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

@@ -1,11 +1,11 @@
 import { GitHub, LinkedIn, Email } from '@mui/icons-material';
-import '../styles/Footer.css';
+import styles from './footer.css';
 // import React from 'react';
 
 function Footer() {
   return (
-    <div className='footer'>
-      <div className='socialMedia'>
+    <div className={styles.footer}>
+      <div className={styles.socialMedia}>
         <LinkedIn />
         <GitHub />
         <Email />
