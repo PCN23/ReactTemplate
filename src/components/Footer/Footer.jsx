@@ -1,5 +1,5 @@
 import { GitHub, LinkedIn, Email } from '@mui/icons-material';
-import styles from '../styles/footer.css';
+import styles from './footer.css';
 // import React from 'react';
 
 function Footer() {

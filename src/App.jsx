@@ -1,26 +1,29 @@
-import Home from './pages/Home';
-import Projects from './pages/Projects';
-// import Experience from './pages/Experience';
-// import Navbar from './components/Navbar';
-import Footer from './Footer/Footer';
+import Home from './components/Pages/Home';
+import Projects from './components/Projects/Projects';
+import Experience from './components/Pages/Experience';
+import Navbar from './components/Navbar/navbar';
+import Footer from './components/Footer/Footer';
 import {
   BrowserRouter as Router,
   Route,
   Routes,
 } from 'react-router-dom';
+import Paccfish from './components/Projects/Paccfish';
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <Navbar />
         <Routes>
-          {/* <Navbar /> */}
           <Route exact path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          {/* <Route path="/experience" element={<Experience />} /> */}
+          <Route path="projects" element={<Projects />} >
+            <Route path="paccfish" element={<Paccfish />} />
+          </Route>
+          <Route path="experience" element={<Experience />} />
         </Routes>
       </Router>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
