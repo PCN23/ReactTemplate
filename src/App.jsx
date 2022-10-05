@@ -9,6 +9,9 @@ import {
   Routes,
 } from 'react-router-dom';
 import Paccfish from './components/Projects/Paccfish';
+import Failedsoccer from './components/Projects/Failedsoccer';
+import Dashboard from './components/Dashboard/Dashboard';
+import Cars from './components/Projects/Cars';
 
 function App() {
   return (
@@ -16,9 +19,13 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          {/* <Route exact path="/" element={<Home />} /> */}
+          <Route index element={<Dashboard />} />
           <Route path="projects" element={<Projects />} >
             <Route path="paccfish" element={<Paccfish />} />
+            <Route path="failedsoccer" element={<Failedsoccer />} />
+            <Route path="cars" element={<Cars />} />
+
           </Route>
           <Route path="experience" element={<Experience />} />
         </Routes>
