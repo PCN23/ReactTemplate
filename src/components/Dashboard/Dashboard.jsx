@@ -32,9 +32,9 @@ export default function Dashboard() {
           <textarea name="bio" placeholder="Tell me about yourself" />
         </label>
 
-        <p>
-          Do you accept?
-          <label>
+        <fieldset>
+          <legend>Do you accept?</legend>
+          <label className="option-lable">
             <input type="checkbox" />
             Yes
           </label>
@@ -42,7 +42,9 @@ export default function Dashboard() {
             <input type="checkbox" />
             No
           </label>
-        </p>
+        </fieldset>
+
+        <button>Submit Form</button>
       </form>
     </div>
   );

@@ -8,9 +8,18 @@
     width: 500px;
   }
 
-  label {
+  label:not(.OptionLable), 
+  legend {
     display: grid;
     gap: 5px;
+  }
+  label.OptionLable {
+    display: flex;
+  }
+
+  select option:disabled {
+    placeholder:aqua;
+
   }
 
   input:not([type='checkbox']):not([type='radio']),
@@ -24,6 +33,10 @@
       font-family: var(--primary-font);
     }
 
+    fieldset label {
+      display: initial;
+    }
+
     input[type='checkbox'],
     input[type='radio'] {
       width: 18px;
@@ -34,5 +47,17 @@
     textarea {
       height:6em;
       resize: vertical;
+    }
+
+    button {
+      padding: 5px 10px;
+      height:40px;
+      background: green;
+      border: 1px solid white;
+      cursor: pointer;
+
+      &.Icon {
+        font-size: 2em;;
+      }
     }
 }
