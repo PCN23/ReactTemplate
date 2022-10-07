@@ -16,11 +16,15 @@ export function TextAreaControl({ label, ...rest }) {
   );
 }
 
-export function SelectOption({ label,name, children, ...rest }) {
+export function SelectOption({ label, children, placeholder, ...rest }) {
   return (
-    <label name={name}>
+    <label>
       {label}
-      <select required>{children}</select>
+      <select {...rest}>
+        {placeholder && <option disabled>Select an option...
+        </option>}
+        {children}
+      </select>
     </label>
   );
 }

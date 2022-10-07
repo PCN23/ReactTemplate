@@ -47,7 +47,23 @@ test('Select Option', async () => {
   );
 
   const SelectControl = screen.getByLabelText('Cars');
+  console.log(SelectControl);
   expect(SelectControl.name).toBe('cars');
   expect(SelectControl.required).toBe(true);
-  expect(SelectControl.option).toBe(3);
+  expect(SelectControl.options.length).toBe(3);
+});
+
+test('Select Control with placeholder', async () => {
+  render(
+    <SelectOption label="Cars" placeholder="choose a car">
+      <option>Honda</option>
+      <option>Jeep</option>
+      <option>Tesla</option>
+    </SelectOption>
+  );
+
+  const SelectControl = screen.getByLabelText('Cars');
+  expect(SelectControl.options.length).toBe(4);
+  const placeHolderOption = SelectControl.options.item(0);
+  expect(placeHolderOption.disabled).toBe(true);
 });
