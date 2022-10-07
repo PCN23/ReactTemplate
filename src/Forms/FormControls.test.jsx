@@ -65,5 +65,6 @@ test('Select Control with placeholder', async () => {
   const SelectControl = screen.getByLabelText('Cars');
   expect(SelectControl.options.length).toBe(4);
   const placeHolderOption = SelectControl.options.item(0);
+  expect(placeHolderOption.textContent).toBe('choose a car');
   expect(placeHolderOption.disabled).toBe(true);
 });

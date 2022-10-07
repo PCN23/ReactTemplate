@@ -21,8 +21,7 @@ export function SelectOption({ label, children, placeholder, ...rest }) {
     <label>
       {label}
       <select {...rest}>
-        {placeholder && <option disabled>Select an option...
-        </option>}
+        {placeholder && <option disabled>{placeholder}</option>}
         {children}
       </select>
     </label>
