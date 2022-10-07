@@ -80,6 +80,6 @@ test('checkbox control', async () => {
     />
   );
 
-  const legend = screen.getByRole('group');
+  const legend = screen.getByText('Do you accept?');
   expect(legend).not.toBeNull();
 });
