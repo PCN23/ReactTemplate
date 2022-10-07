@@ -1,3 +1,10 @@
+import {
+  CheckboxControl,
+  FormButton,
+  InputControl,
+  SelectOption,
+  TextAreaControl,
+} from '../../Forms/FormControls';
 import styles from './Dashboard.css';
 
 export default function Dashboard() {
@@ -5,46 +12,34 @@ export default function Dashboard() {
     <div className={styles.Dashboard}>
       Dashboard
       <form>
-        <label>
-          Name
-          <input name="name" placeholder="First and last name" />
-        </label>
+        <InputControl
+          label="Name"
+          name="name"
+          placeholder="First and last name"
+        />
 
-        <label>
-          Date
-          <input type="date" name="date" />
-        </label>
+        <InputControl label="Date" required type="date" name="date" />
 
-        <label>
-          Option
-          <select>
-            <option disabled selected value="">
-              Select an option
-            </option>
-            <option value="1">Good</option>
-            <option value="2">Better</option>
-            <option value="3">Best</option>
-          </select>
-        </label>
+        <SelectOption
+          label="Letter"
+          required
+          name="letter"
+          placeholder="select a letter"
+        >
+          <option value="1">Good</option>
+          <option value="2">Better</option>
+          <option value="3">Best</option>
+        </SelectOption>
 
-        <label>
-          Bio
-          <textarea name="bio" placeholder="Tell me about yourself" />
-        </label>
+        <TextAreaControl
+          label="Bio"
+          name="bio"
+          placeholder="Tell me about yourself"
+        />
 
-        <fieldset>
-          <legend>Do you accept?</legend>
-          <label className="option-label">
-            <input type="checkbox" />
-            Yes
-          </label>
-          <label>
-            <input type="checkbox" />
-            No
-          </label>
-        </fieldset>
+        <CheckboxControl legend="Do you accept?" label="Yes" />
 
-        <button>Submit Form</button>
+        <FormButton text="Submit" />
       </form>
     </div>
   );
