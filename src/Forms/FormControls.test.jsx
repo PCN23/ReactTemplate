@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import {
+  CheckboxControl,
   InputControl,
   SelectOption,
   TextAreaControl,
@@ -67,4 +68,18 @@ test('Select Control with placeholder', async () => {
   const placeHolderOption = SelectControl.options.item(0);
   expect(placeHolderOption.textContent).toBe('choose a car');
   expect(placeHolderOption.disabled).toBe(true);
+});
+
+test('checkbox control', async () => {
+  render(
+    <CheckboxControl
+      legend="Do you accept?"
+      label="yes" 
+      name="accept"
+      required
+    />
+  );
+
+  const legend = screen.getByRole('group');
+  expect(legend).not.toBeNull();
 });

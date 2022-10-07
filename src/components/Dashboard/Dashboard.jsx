@@ -34,7 +34,7 @@ export default function Dashboard() {
 
         <fieldset>
           <legend>Do you accept?</legend>
-          <label className="option-lable">
+          <label className="option-label">
             <input type="checkbox" />
             Yes
           </label>

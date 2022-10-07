@@ -38,3 +38,19 @@ export function SelectOption({
     </FormControl>
   );
 }
+
+export function CheckboxControl({ legend }) {
+  return (
+    <fieldset>
+      <legend>{legend}</legend>
+      <label>
+        <input type="checkbox" />
+        Yes
+      </label>
+      <label>
+        <input type="checkbox" />
+        No
+      </label>
+    </fieldset>
+  );
+}
