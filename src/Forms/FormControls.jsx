@@ -39,18 +39,24 @@ export function SelectOption({
   );
 }
 
-export function CheckboxControl({ legend }) {
+export function CheckboxControl({ legend, ...rest }) {
   return (
     <fieldset>
       <legend>{legend}</legend>
       <label>
-        <input type="checkbox" />
+        <input type="checkbox" {...rest} />
+        {/* this label isnt working */}
         Yes
       </label>
       <label>
-        <input type="checkbox" />
+        <input type="checkbox" {...rest} />
+        {/* this label isnt working */}
         No
       </label>
     </fieldset>
   );
+}
+
+export function FormButton({ text }) {
+  return <button>{text}</button>;
 }
