@@ -21,6 +21,7 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/',
   },
+
   devServer: {
     port: 7891,
     historyApiFallback: true,
@@ -61,7 +62,9 @@ module.exports = {
             loader: 'css-loader',
             options: {
               sourceMap: true,
-              modules: true,
+              modules: {
+                localIdentName: '[name]__[local]__[hash:base64:5]',
+              },
               importLoaders: 1,
             },
           },

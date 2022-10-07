@@ -1,6 +1,8 @@
+import styles from './FormControls.css';
+
 function FormControl({ label, children }) {
   return (
-    <label>
+    <label className={styles.FormControl}>
       {label}
       {children}
     </label>

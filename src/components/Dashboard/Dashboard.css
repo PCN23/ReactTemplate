@@ -8,12 +8,15 @@
     width: 500px;
   }
 
-  label:not(.OptionLable), 
+  label:not(.OptionLabel), 
   legend {
     display: grid;
     gap: 5px;
+    color: var(--caption-color);
+    font-family: var(--label-font);
+    font-size: .9em;
   }
-  label.OptionLable {
+  label.OptionLabel {
     display: flex;
   }
 

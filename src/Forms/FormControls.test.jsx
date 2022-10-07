@@ -49,7 +49,6 @@ test('Select Option', async () => {
   );
 
   const SelectControl = screen.getByLabelText('Cars');
-  console.log(SelectControl);
   expect(SelectControl.name).toBe('cars');
   expect(SelectControl.required).toBe(true);
   expect(SelectControl.options.length).toBe(3);
