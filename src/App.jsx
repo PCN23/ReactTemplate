@@ -1,4 +1,3 @@
-import Home from './components/Pages/Home';
 import Projects from './components/Projects/Projects';
 import Experience from './components/Pages/Experience';
 import Navbar from './components/Navbar/navbar';
