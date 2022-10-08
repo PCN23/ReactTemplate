@@ -4,7 +4,7 @@ import {
   InputControl,
   SelectOption,
   TextAreaControl,
-} from '../../Forms/FormControls';
+} from '../Forms/FormControls';
 import styles from './Dashboard.css';
 
 export default function Dashboard() {
