@@ -1,5 +1,11 @@
 import { fetchOrReject } from './utils';
 
+export const getAllPoke = async () => {
+  const res = await fetchOrReject(process.env.POKEDEX_URL + '/');
+  return res.json();
+};
+
+
 export const typesGetAll = async () => {
   const res = await fetchOrReject(process.env.POKEDEX_URL + '/types');
   return res.json();
