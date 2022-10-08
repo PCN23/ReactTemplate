@@ -1,21 +1,23 @@
-// import { Input } from '@mui/icons-material';
-import { useState } from 'react';
-import { getAllPoke } from '../../services/pokedex';
-import { FormButton, InputControl } from '../Forms/FormControls';
+import SearchForm from './SearchForm';
+import searchResults from 
 
 export default function Search() {
-    const {}
-  
+  const {
+    pokemon,
+    setPokemon,
+    searchParams,
+    searchResults,
+    searchPokedex,
+  } = useSearchResults();
 
   return (
-    <div>
-      <form>
-        <InputControl label="search" value="" />
-        <FormButton text="submit" />
-      </form>
-          <div>
-            pokemon
-      </div>
-    </div>
+    <section>
+      <SearchForm
+        pokemon={pokemon}
+        setPokemon={setPokemon}
+        onSubmit={searchPokedex}
+      />
+      <searchResults results={searchResults} />
+    </section>
   );
 }
