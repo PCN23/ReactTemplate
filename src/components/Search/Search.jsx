@@ -4,13 +4,8 @@ import { getAllPoke } from '../../services/pokedex';
 import { FormButton, InputControl } from '../Forms/FormControls';
 
 export default function Search() {
-  const { pokemon, setPokemon } = useState([]);
-
-  const allPoke = async () => {
-    const pokemonResults = await getAllPoke();
-    setPokemon();
-    setPokemonResults();
-  };
+    const {}
+  
 
   return (
     <div>
