@@ -1,9 +1,12 @@
+/* eslint-disable max-len */
+import { FormButton } from '../Forms/FormControls';
 import SearchForm from './SearchForm';
-import searchResults from 
+import SearchResults from './SearchResults';
 
 export default function Search() {
   const {
     pokemon,
+    infiniteScrollRef,
     setPokemon,
     searchParams,
     searchResults,
@@ -13,11 +16,9 @@ export default function Search() {
   return (
     <section>
       <SearchForm
-        pokemon={pokemon}
-        setPokemon={setPokemon}
-        onSubmit={searchPokedex}
-      />
-      <searchResults results={searchResults} />
+        pokemon={pokemon} setPokemon={setPokemon} onSubmit={searchPokedex} />
+      <SearchResults results={searchResults} infiniteScrollRef={infiniteScrollRef} />
+      <FormButton onClick={nextPage} >Moar</FormButton>
     </section>
   );
 }
