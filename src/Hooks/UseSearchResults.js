@@ -1,15 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { search } from '../services/pokedex';
+import { search } from '../services/pokedex.js';
 import { useSearchParams } from 'react-router-dom';
 
 export default function useSearchResults() {
   const [searchResults, setSearchResults] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const [error, setError] = useState('');
-  const usableSearchParams = Object.fromEntries(
-    searchParams.entries()
-  );
+  const usableSearchParams = Object.fromEntries(searchParams.entries());
 
   const nextPage = async () => {
     usableSearchParams.page = parseInt(usableSearchParams.page) + 1;

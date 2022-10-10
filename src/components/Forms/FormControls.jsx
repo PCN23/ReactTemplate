@@ -1,13 +1,22 @@
 /* eslint-disable max-len */
 import styles from './FormControls.css';
+import classnames from 'classnames';
 
-function FormControl({ label, children }) {
+function FormControl({ label, required, children }) {
+  const className = classnames(styles.FormControl, styles.LabelText);
   return (
-    <label className={styles.FormControl}>
-      {label}
+    <label className={className}>
+      <LabelText text={label} required={required} />
       {children}
     </label>
   );
+}
+
+export function LabelText({ text, required }) {
+  const className = classnames(styles.LabelText, {
+    [styles.Required]: required,
+  });
+  return <span className={className}>{text}</span>;
 }
 
 export function InputControl({ label, required, ...rest }) {
@@ -37,26 +46,23 @@ export function SelectOption({ label, required, children, placeholder, ...rest }
   );
 }
 
-export function CheckboxControl({ legend, ...rest }) {
+export function CheckboxControl({ legend, required, label, ...rest }) {
   return (
-    <fieldset>
-      <legend>{legend}</legend>
+    <fieldset className={styles.CheckboxControl}>
+      <legend>
+        <LabelText text={legend} required={required} />
+      </legend>
       <label>
-        <input type="checkbox" {...rest} />
-        {/* this label isnt working */}
-        Yes
-      </label>
-      <label>
-        <input type="checkbox" {...rest} />
-        {/* this label isnt working */}
-        No
+        <input type="checkbox" {...rest} required={required}/>
+        {label}
       </label>
     </fieldset>
   );
 }
 
 export function FormButton({ children, ...rest }) {
-  return <button className={styles.FormButton} {...rest}>
+  return (<button className={styles.FormButton} {...rest}>
     {children}
-  </button>;
+  </button>
+  );
 }

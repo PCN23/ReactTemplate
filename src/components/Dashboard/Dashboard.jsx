@@ -24,7 +24,7 @@ export default function Dashboard() {
           label="Letter"
           required
           name="letter"
-          placeholder="select a letter"
+          placeholder="Select a Grade"
         >
           <option value="1">Good</option>
           <option value="2">Better</option>
