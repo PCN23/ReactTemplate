@@ -15,6 +15,8 @@ export default function Search() {
     searchResults,
     searchPokedex,
   } = useSearchResults();
+  // search params not being used but search feature is working, unable to identify where the issue is
+
 
   return <section>
     <SearchForm pokemon={pokemon} setPokemon={setPokemon} onSubmit={searchPokedex}/>
