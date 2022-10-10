@@ -1,9 +1,9 @@
 import React from 'react';
-import useSearchResults from '../../Hooks/useSearchResults.js';
-import { FormButton, SelectOption } from '../Forms/FormControls.jsx';
+import useSearchForm from '../../Hooks/useSearchForm.js';
+import { FormButton, InputControl } from '../Forms/FormControls.jsx';
 
 export default function SearchForm({ onSubmit }) {
-  const { pokemon, setPokemon, searchForm, setSearchForm } = useSearchResults();
+  const { pokemon, setPokemon, searchForm, setSearchForm } = useSearchForm();
   const submitHandler = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -12,11 +12,11 @@ export default function SearchForm({ onSubmit }) {
   };
 
   return <form onSubmit={submitHandler}>
-    <SelectOption
-      label="text"
+    <InputControl
+      type="text"
       name="pokemon"
       value={pokemon}
-      onChange={(e) => setPokemon(e.target.value)}
+      onChange={e => setPokemon(e.target.value)}
     />
     <FormButton type="submit">Search</FormButton>
   </form>;

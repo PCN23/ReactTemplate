@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import styles from './FormControls.css';
 
 function FormControl({ label, children }) {
@@ -9,26 +10,29 @@ function FormControl({ label, children }) {
   );
 }
 
-export function InputControl({ label, ...rest }) {
-  return (
-    <FormControl label={label}>
-      <input {...rest} />
-    </FormControl>
-  );
-}
-
-export function TextAreaControl({ label, ...rest }) {
-  return (
-    <FormControl label={label}>
-      <textarea {...rest} />
-    </FormControl>
-  );
-}
-
-export function SelectOption({ label, required, ...rest }) {
+export function InputControl({ label, required, ...rest }) {
   return (
     <FormControl label={label} required={required}>
-      <input {...rest} required={required}/>
+      <input {...rest} required={required} />
+    </FormControl>
+  );
+}
+
+export function TextAreaControl({ label, required, ...rest }) {
+  return (
+    <FormControl label={label} required={required}>
+      <textarea {...rest} required={required}/>
+    </FormControl>
+  );
+}
+
+export function SelectOption({ label, required, children, placeholder, ...rest }) {
+  return (
+    <FormControl label={label} required={required}>
+      <select {...rest} required={required}>
+        {placeholder && <option disabled>{placeholder}</option>}
+        {children}
+      </select>
     </FormControl>
   );
 }
@@ -51,6 +55,8 @@ export function CheckboxControl({ legend, ...rest }) {
   );
 }
 
-export function FormButton({ text }) {
-  return <button>{text}</button>;
+export function FormButton({ children, ...rest }) {
+  return <button className={styles.FormButton} {...rest}>
+    {children}
+  </button>;
 }
