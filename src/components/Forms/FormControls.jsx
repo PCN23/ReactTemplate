@@ -25,18 +25,10 @@ export function TextAreaControl({ label, ...rest }) {
   );
 }
 
-export function SelectOption({
-  label,
-  children,
-  placeholder,
-  ...rest
-}) {
+export function SelectOption({ label, required, ...rest }) {
   return (
-    <FormControl label={label}>
-      <select {...rest}>
-        {placeholder && <option disabled>{placeholder}</option>}
-        {children}
-      </select>
+    <FormControl label={label} required={required}>
+      <input {...rest} required={required}/>
     </FormControl>
   );
 }
