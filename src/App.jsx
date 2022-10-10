@@ -11,7 +11,7 @@ import Paccfish from './components/Projects/Paccfish';
 import Failedsoccer from './components/Projects/Failedsoccer';
 import Dashboard from './components/Dashboard/Dashboard';
 import Cars from './components/Projects/Cars';
-// import Search from './components/Search/Search';
+import Search from './components/Search/Search';
 import Home  from '../src/components/Pages/Home';
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
             <Route path="failedsoccer" element={<Failedsoccer />} />
             <Route path="cars" element={<Cars />} />
           </Route>
-          {/* <Route path="search" element={<Search />} /> */}
+          <Route path="search" element={<Search />} />
           <Route path="experience" element={<Experience />} />
         </Routes>
       </Router>

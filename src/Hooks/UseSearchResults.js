@@ -8,8 +8,7 @@ export default function UseSearchResults() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [error, setError] = useState('');
   const usableSearchParams = Object.fromEntries(
-    searchParams.entries()
-  );
+    searchParams.entries());
 
   const nextPage = async () => {
     usableSearchParams.page = parseInt(usableSearchParams.page) + 1;
