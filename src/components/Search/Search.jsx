@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 // import React from 'react';
-import UseSearchResults from '../../Hooks/UseSearchResults';
+import useSearchResults from '../../Hooks/useSearchResults';
 import { FormButton } from '../Forms/FormControls';
 import SearchForm from './SearchForm';
 import SearchResults from './SearchResults';
@@ -14,7 +14,7 @@ export default function Search() {
     // searchParams,
     searchResults,
     searchPokedex,
-  } = UseSearchResults();
+  } = useSearchResults();
 
   return (
     <section>
