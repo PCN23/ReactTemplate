@@ -6,7 +6,6 @@ export const search = async (searchObj) => {
     throw res;
   } else {
     const body = await res.json();
-    console.log('search results', body);
     return body;
   }
 };
