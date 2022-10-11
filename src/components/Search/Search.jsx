@@ -1,5 +1,4 @@
 /* eslint-disable max-len */
-import React from 'react';
 import SearchForm from './SearchForm.jsx';
 import useSearchResults from '../../Hooks/useSearchResults.js';
 import { FormButton } from '../Forms/FormControls.jsx';
@@ -11,7 +10,6 @@ export default function Search() {
     infiniteScrollRef,
     nextPage,
     setPokemon,
-    searchParams,
     searchResults,
     searchPokedex,
   } = useSearchResults();

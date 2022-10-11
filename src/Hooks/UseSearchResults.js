@@ -6,7 +6,7 @@ import { useSearchParams } from 'react-router-dom';
 export default function useSearchResults() {
   const [searchResults, setSearchResults] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [error, setError] = useState('');
+  const [, setError] = useState('');
   const usableSearchParams = Object.fromEntries(searchParams.entries());
 
   const nextPage = async () => {
